@@ -57,9 +57,9 @@ jobs:
         run: |
           ls
           echo "LS Done"
-          mamba create -n -c conda-forge -c nodefaults -n test_env xarray=2023.10.0 numpy =${{ matrix.numpy_version }}
+          mamba create -n -c conda-forge -c nodefaults -n test_env xarray=2023.10.0 numpy=${{ matrix.numpy_version }}
           echo "Installation done"
           mamba list -n test_env
           echo "libraries printed"
-          mamba run -n test_env python python -c "import xarray"
+          mamba run -n test_env python -c "import xarray"
           echo "Import xarray done"
